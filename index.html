@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>John Waldo · Founder of Infivu</title>
+  <meta name="description" content="John Waldo: founder of Infivu, building websites that adapt to every visitor.">
+  <meta property="og:title" content="John Waldo · Founder of Infivu">
+  <meta property="og:description" content="Building websites that adapt to every visitor.">
+  <meta property="og:image" content="https://infivu.com/brand/avatar.png">
+  <link rel="icon" href="https://infivu.com/brand/logo.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!--
+    Infivu: this site is Infivu's first customer. Every element Infivu may
+    personalize has a stable id, and every goal it measures has a
+    data-infivu-kpi attribute. Keep this tag in <head>, without defer/async,
+    so the right version shows before the page paints.
+  -->
+  <script src="https://infivu.com/snippet.js"></script>
+
+  <style>
+    :root {
+      --ink: #1c1917; --body: #44403c; --muted: #78716c; --line: #e7e5e4;
+      --paper: #ffffff; --cream: #fff7ed; --blue: #2563eb; --blue-dark: #1d4ed8; --orange: #c2410c;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif; color: var(--body); background: var(--paper); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; }
+    .wrap { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+    .display { font-family: Fraunces, Georgia, serif; color: var(--ink); letter-spacing: -0.015em; font-weight: 600; }
+
+    /* nav */
+    header { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.9); backdrop-filter: blur(8px); border-bottom: 1px solid #f5f5f4; }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .brand { font-family: Fraunces, Georgia, serif; font-weight: 700; font-size: 20px; color: var(--ink); text-decoration: none; }
+    .nav-links { display: flex; gap: 24px; font-size: 14px; }
+    .nav-links a { text-decoration: none; color: var(--muted); }
+    .nav-links a:hover { color: var(--ink); }
+
+    /* hero */
+    .hero { background: radial-gradient(ellipse at top right, var(--cream) 0%, #fff 60%); }
+    .hero .wrap { padding-top: 88px; padding-bottom: 88px; display: grid; grid-template-columns: 1.3fr 1fr; gap: 56px; align-items: center; }
+    .eyebrow { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--orange); background: #ffedd5; border: 1px solid #fed7aa; border-radius: 999px; padding: 5px 12px; margin-bottom: 20px; }
+    h1 { font-size: clamp(40px, 6vw, 60px); line-height: 1.05; margin: 0 0 20px; }
+    h1 .accent { color: var(--blue); }
+    .lead { font-size: 18px; max-width: 540px; margin: 0 0 32px; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn { display: inline-block; text-decoration: none; font-weight: 600; font-size: 15px; padding: 13px 24px; border-radius: 999px; transition: background .15s, border-color .15s; }
+    .btn-primary { background: var(--blue); color: #fff; box-shadow: 0 6px 16px rgba(37,99,235,.2); }
+    .btn-primary:hover { background: var(--blue-dark); }
+    .btn-ghost { border: 1px solid #d6d3d1; color: var(--ink); background: #fff; }
+    .btn-ghost:hover { border-color: #a8a29e; }
+    .portrait { aspect-ratio: 1; border-radius: 32px; background: linear-gradient(145deg, #2563eb, #1e40af); display: flex; align-items: center; justify-content: center; box-shadow: 0 24px 60px rgba(37,99,235,.25); }
+    .portrait span { font-family: Fraunces, Georgia, serif; font-size: 112px; font-weight: 700; color: #fff; letter-spacing: -0.04em; }
+
+    /* sections */
+    section.block { padding: 88px 0; border-top: 1px solid #f5f5f4; }
+    section.block.alt { background: #fafaf9; }
+    .section-title { font-size: 34px; margin: 0 0 12px; }
+    .section-lead { color: var(--muted); font-size: 17px; max-width: 620px; margin: 0 0 40px; }
+
+    .about-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; }
+    .about-grid p { font-size: 17px; margin: 0 0 16px; }
+    .facts { list-style: none; margin: 0; padding: 24px; border: 1px solid var(--line); border-radius: 20px; background: #fff; }
+    .facts li { padding: 10px 0; border-bottom: 1px dashed var(--line); display: flex; justify-content: space-between; gap: 16px; font-size: 15px; }
+    .facts li:last-child { border-bottom: 0; }
+    .facts span:first-child { color: var(--muted); }
+    .facts span:last-child { color: var(--ink); font-weight: 500; text-align: right; }
+
+    .feature { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; background: #fff; border: 1px solid var(--line); border-radius: 28px; padding: 40px; margin-bottom: 24px; }
+    .feature h3 { font-size: 28px; margin: 0 0 12px; }
+    .feature p { margin: 0 0 24px; }
+    .tag { display: inline-block; font-size: 12px; font-weight: 600; color: var(--blue); background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 999px; padding: 3px 10px; margin-bottom: 14px; }
+    .mock { background: #fafaf9; border: 1px solid var(--line); border-radius: 20px; padding: 16px; display: grid; gap: 10px; }
+    .mock div { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px; font-size: 13px; }
+    .mock b { display: block; font-family: Fraunces, Georgia, serif; font-size: 16px; color: var(--ink); font-weight: 600; margin-top: 2px; }
+    .mock small { color: var(--muted); text-transform: uppercase; letter-spacing: .06em; font-size: 10px; font-weight: 600; }
+
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .card { background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 24px; display: flex; flex-direction: column; text-decoration: none; transition: border-color .15s, transform .15s; }
+    .card:hover { border-color: #a8a29e; transform: translateY(-2px); }
+    .card h4 { font-family: Fraunces, Georgia, serif; font-size: 19px; color: var(--ink); margin: 0 0 8px; font-weight: 600; }
+    .card p { font-size: 14px; color: var(--muted); margin: 0 0 16px; flex: 1; }
+    .card .meta { font-size: 12px; font-weight: 600; color: var(--blue); }
+
+    .contact { text-align: center; background: linear-gradient(135deg, #2563eb, #1e40af); color: #fff; border-radius: 28px; padding: 56px 32px; }
+    .contact h2 { color: #fff; font-size: 34px; margin: 0 0 10px; }
+    .contact p { color: #dbeafe; margin: 0 auto 28px; max-width: 520px; font-size: 17px; }
+    .contact .btn-primary { background: #fff; color: var(--blue); box-shadow: none; }
+    .contact .btn-primary:hover { background: #eff6ff; }
+    .contact .btn-ghost { background: transparent; color: #fff; border-color: rgba(255,255,255,.5); }
+
+    footer { padding: 32px 0 48px; color: var(--muted); font-size: 13px; }
+    footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    footer a { text-decoration: none; }
+    footer a:hover { color: var(--ink); }
+
+    @media (max-width: 820px) {
+      .hero .wrap, .about-grid, .feature { grid-template-columns: 1fr; }
+      .hero .wrap { padding-top: 56px; padding-bottom: 56px; }
+      .portrait { max-width: 220px; }
+      .portrait span { font-size: 72px; }
+      .cards { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .feature { padding: 28px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="wrap nav">
+      <a href="#" class="brand">John Waldo</a>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#infivu">Infivu</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero: the main block Infivu personalizes per visitor group -->
+    <section class="hero">
+      <div class="wrap">
+        <div>
+          <span id="hero-eyebrow" class="eyebrow">Founder · Infivu</span>
+          <h1 id="hero-title" class="display">Hi, I'm John. I build websites that <span class="accent">adapt to every visitor.</span></h1>
+          <p id="hero-subtitle" class="lead">I'm the founder of Infivu, a platform that learns who visits a small business's website and shows each person the version most likely to turn them into a customer. This site is Infivu's very first user.</p>
+          <div class="actions">
+            <a id="hero-cta" href="#infivu" class="btn btn-primary" data-infivu-kpi="cta_click">See what I'm building</a>
+            <a id="hero-secondary" href="#contact" class="btn btn-ghost">Get in touch</a>
+          </div>
+        </div>
+        <div class="portrait" aria-hidden="true"><span>JW</span></div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="block">
+      <div class="wrap about-grid">
+        <div>
+          <h2 id="about-title" class="display section-title">About me</h2>
+          <p id="about-copy">I'm a student founder at Washington University in St. Louis who loves turning data into tools people actually use. I started out writing games and stock-analysis programs, and now I'm focused on helping small businesses compete online without needing a marketing team.</p>
+          <p id="about-copy-2">Most small business websites show the same page to everyone. I think every visitor deserves a site that speaks to them, and every owner deserves to know what's working.</p>
+        </div>
+        <ul class="facts">
+          <li><span>Building</span><span>Infivu</span></li>
+          <li><span>Based in</span><span>St. Louis, MO</span></li>
+          <li><span>Interests</span><span>Web personalization, data, markets</span></li>
+          <li><span>Code</span><span><a href="https://github.com/JohnWaldo26" target="_blank" rel="noopener">github.com/JohnWaldo26</a></span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Infivu -->
+    <section id="infivu" class="block alt">
+      <div class="wrap">
+        <h2 id="infivu-heading" class="display section-title">What I'm building</h2>
+        <p id="infivu-lead" class="section-lead">Infivu is now in private beta for small businesses. Here's the idea in one picture: one website, a different first impression for each visitor.</p>
+        <div class="feature">
+          <div>
+            <span class="tag">Private beta</span>
+            <h3 id="infivu-title" class="display">Infivu</h3>
+            <p id="infivu-copy">Infivu spends its first couple of weeks just learning who visits a site. Then it creates personalized versions of pages for different visitor groups, tests every one against the original, and keeps only what brings in more customers. Owners stay in charge and can give feedback in plain English.</p>
+            <div class="actions">
+              <a id="infivu-cta" href="https://infivu.com/#waitlist" class="btn btn-primary" data-infivu-kpi="signup" target="_blank" rel="noopener">Join the beta waitlist</a>
+              <a id="infivu-demo" href="https://infivu.com/test" class="btn btn-ghost" target="_blank" rel="noopener">Try the live demo</a>
+            </div>
+          </div>
+          <div class="mock" aria-hidden="true">
+            <div><small>A returning customer sees</small><b>Welcome back! Ready for a refill?</b></div>
+            <div><small>A first-time visitor from Instagram sees</small><b>Meet the farmers behind your cup</b></div>
+            <div><small>A recruiter from LinkedIn sees</small><b>Founder building adaptive websites</b></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="block">
+      <div class="wrap">
+        <h2 id="projects-heading" class="display section-title">Other projects</h2>
+        <p id="projects-lead" class="section-lead">A few things I've built along the way.</p>
+        <div class="cards">
+          <a class="card" href="https://github.com/JohnWaldo26/GOOG-vs-GOOGL-Analysis" target="_blank" rel="noopener">
+            <h4 id="project1-title">GOOG vs. GOOGL Analysis</h4>
+            <p id="project1-desc">Analyzes the historical price gap between Alphabet's two share classes.</p>
+            <span class="meta">View on GitHub →</span>
+          </a>
+          <a class="card" href="https://github.com/JohnWaldo26/S-P-500-Company-Analysis" target="_blank" rel="noopener">
+            <h4 id="project2-title">S&amp;P 500 Company Analysis</h4>
+            <p id="project2-desc">A program for quickly analyzing company data across the S&amp;P 500.</p>
+            <span class="meta">View on GitHub →</span>
+          </a>
+          <a class="card" href="https://github.com/JohnWaldo26/Simon-Java" target="_blank" rel="noopener">
+            <h4 id="project3-title">Simon</h4>
+            <p id="project3-desc">The classic memory game, built in Java Swing. Easy to play and fun.</p>
+            <span class="meta">View on GitHub →</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="block">
+      <div class="wrap">
+        <div class="contact">
+          <h2 id="contact-title" class="display">Let's talk</h2>
+          <p id="contact-copy">Run a small business and want a website that works harder? Curious about Infivu, or just want to connect? I'd love to hear from you.</p>
+          <div class="actions" style="justify-content:center">
+            <a id="contact-cta" href="mailto:support@infivu.com" class="btn btn-primary" data-infivu-kpi="conversion">Email me</a>
+            <a id="contact-github" href="https://github.com/JohnWaldo26" class="btn btn-ghost" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>© <span id="year">2026</span> John Waldo</span>
+      <span>Personalized by <a href="https://infivu.com" target="_blank" rel="noopener">Infivu</a></span>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
