@@ -15,7 +15,9 @@
   <!--
     Infivu: this site is Infivu's first customer. Every element Infivu may
     personalize has a stable id, and every goal it measures has a
-    data-infivu-kpi attribute. Keep this tag in <head>, without defer/async,
+    data-infivu-kpi attribute. Inside those elements, use only simple
+    formatting (<em>, <strong>); Infivu skips elements with other tags in
+    them so it never overwrites prices, counters or icons. Keep this tag in <head>, without defer/async,
     so the right version shows before the page paints.
   -->
   <script src="https://infivu.com/snippet.js"></script>
@@ -45,7 +47,7 @@
     .hero .wrap { padding-top: 88px; padding-bottom: 88px; display: grid; grid-template-columns: 1.3fr 1fr; gap: 56px; align-items: center; }
     .eyebrow { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--orange); background: #ffedd5; border: 1px solid #fed7aa; border-radius: 999px; padding: 5px 12px; margin-bottom: 20px; }
     h1 { font-size: clamp(40px, 6vw, 60px); line-height: 1.05; margin: 0 0 20px; }
-    h1 .accent { color: var(--blue); }
+    h1 .accent { color: var(--blue); font-style: normal; }
     .lead { font-size: 18px; max-width: 540px; margin: 0 0 32px; }
     .actions { display: flex; flex-wrap: wrap; gap: 12px; }
     .btn { display: inline-block; text-decoration: none; font-weight: 600; font-size: 15px; padding: 13px 24px; border-radius: 999px; transition: background .15s, border-color .15s; }
@@ -132,7 +134,7 @@
       <div class="wrap">
         <div>
           <span id="hero-eyebrow" class="eyebrow">Founder · Infivu</span>
-          <h1 id="hero-title" class="display">Hi, I'm John. I build websites that <span class="accent">adapt to every visitor.</span></h1>
+          <h1 id="hero-title" class="display">Hi, I'm John. I build websites that <em class="accent">adapt to every visitor.</em></h1>
           <p id="hero-subtitle" class="lead">I'm the founder of Infivu, a platform that learns who visits a small business's website and shows each person the version most likely to turn them into a customer. This site is Infivu's very first user.</p>
           <div class="actions">
             <a id="hero-cta" href="#infivu" class="btn btn-primary" data-infivu-kpi="cta_click">See what I'm building</a>
